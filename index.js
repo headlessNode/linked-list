@@ -1,0 +1,20 @@
+import LinkedList from "./linkedList";
+
+const list = LinkedList();
+list.append('one');
+list.append('two');
+list.append('three');
+list.append('four');
+list.append('five');
+list.prepend('six');
+list.prepend('seven');
+list.prepend('zero');
+console.log(list.toString());
+list.insertAt('eight', 1);
+list.insertAt('nine', 2);
+list.insertAt('ten', 3);
+list.insertAt('eleven', 4);
+console.log(list.toString());
+list.removeAt(4);
+list.removeAt(3);
+console.log(list.toString());
