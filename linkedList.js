@@ -130,5 +130,25 @@ class LinkedList{
             return null;
         }
     }
+    toString(){
+        if(this.head === null){
+            throw new Error('List is empty');
+        }
+        else{
+            let listSize = list.size();
+            let iterator = 0
+            let tmp = this.head;
+            let stringList = `(${tmp.value})`
+            while(tmp.nextNode != null){
+                tmp = tmp.nextNode;
+                iterator++;
+                stringList += ` --> (${tmp.value})`;
+                if(iterator === listSize - 1){
+                    stringList += ` --> (Null)`;
+                }
+            }
+            return stringList;
+        }
+    }
 
 }
