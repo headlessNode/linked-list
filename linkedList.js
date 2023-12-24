@@ -44,5 +44,25 @@ class LinkedList{
         }
         return count;
     }
+    head(){
+        if(this.head != null){
+            return this.head;
+        }
+        else{
+            throw new Error('List is empty');
+        }
+    }
+    tail(){
+        if(this.head != null){
+            let tmp = this.head;
+            while(tmp.nextNode != null){
+                tmp = tmp.nextNode;
+            }
+            return tmp;
+        }
+        else{
+            throw new Error('List is empty');
+        }
+    }
 
 }
