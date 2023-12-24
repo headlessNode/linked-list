@@ -113,5 +113,22 @@ class LinkedList{
             return false;
         }
     }
+    find(data){
+        if(this.head === null){
+            throw new Error('List is empty');
+        }
+        else{
+            let index = 0;
+            let tmp = this.head;
+            while(tmp.nextNode != null){
+                tmp = tmp.nextNode;
+                index++;
+                if(tmp.value === data){
+                    return index;
+                }
+            }
+            return null;
+        }
+    }
 
 }
