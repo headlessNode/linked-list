@@ -98,5 +98,20 @@ class LinkedList{
             }
         }
     }
+    contains(data){
+        if(this.head === null){
+            throw new Error('List is empty');
+        }
+        else{
+            let tmp = this.head;
+            while(tmp.nextNode != null){
+                tmp = tmp.nextNode;
+                if(tmp.value === data){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
 
 }
