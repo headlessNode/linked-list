@@ -150,5 +150,44 @@ class LinkedList{
             return stringList;
         }
     }
+    insertAt(data,index){
+        if(this.head === null){
+            throw new Error('List is empty');
+        }
+        else{
+            let iterator = 0;
+            let tmp = this.head;
+            while(tmp.nextNode != null){
+                if(iterator === index - 1){
+                    let nodeBefore = tmp;
+                    let currNode = nodeBefore.nextNode;
+                    nodeBefore.nextNode = new Node(data);
+                    nodeBefore.nextNode.nextNode = currNode;
+                }
+                tmp = tmp.nextNode;
+                iterator++;
+            }
+        }
+    }
+    removeAt(index){
+        if(this.head === null){
+            throw new Error('List is empty');
+        }
+        else{
+            let iterator = 0;
+            let tmp = this.head;
+            while(tmp.nextNode != null){
+                if(iterator === index - 1){
+                    let nodeBefore = tmp;
+                    let currNode = nodeBefore.nextNode;
+                    nodeBefore.nextNode = currNode.nextNode;
+                    currNode.value = null;
+                    currNode.nextNode = null;
+                }
+                tmp = tmp.nextNode;
+                iterator++;
+            }
+        }
+    }
 
 }
