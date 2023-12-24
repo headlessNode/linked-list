@@ -81,5 +81,22 @@ class LinkedList{
             }
         }
     }
+    pop(){
+        if(this.head === null){
+            throw new Error('List is empty');
+        }
+        else{
+            const listSize = list.size();
+            let iterator = 0;
+            let tmp = this.head;
+            while(tmp.nextNode != null){
+                tmp = tmp.nextNode;
+                iterator++;
+                if(iterator === listSize - 2){
+                    tmp.nextNode = null;
+                }
+            }
+        }
+    }
 
 }
