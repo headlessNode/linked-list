@@ -64,5 +64,22 @@ class LinkedList{
             throw new Error('List is empty');
         }
     }
+    at(index){
+        const listSize = this.size();
+        if(index >= listSize){
+            throw new Error('Invalid Index');
+        }
+        else{
+            let iterator = 0;
+            let tmp = this.head;
+            while(tmp.nextNode != null){
+                tmp = tmp.nextNode;
+                iterator++;
+                if(iterator === index){
+                    return tmp;
+                }
+            }
+        }
+    }
 
 }
